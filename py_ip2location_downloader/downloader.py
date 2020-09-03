@@ -30,6 +30,7 @@ def download_free_db_zip(target, IP_VERSION=IPVersionEnum.IPV4, FORMAT=FormatEnu
     
     with open(target, "wb") as file_object:
         file_object.write(response.content)
+    print("IP2LOCATION zip file Downloaded at path: {}".format(target))
     return response
 
 
@@ -55,4 +56,6 @@ def download_auth_db_zip(target, TOKEN, PRODUCT, IP_VERSION, FORMAT):
     with open(target, "wb") as file_object:
         for chunk in response.iter_content(chunk_size=128):
             file_object.write(chunk)
+    # LOG
+    print("IP2LOCATION zip file Downloaded at path: {}".format(target))
     return response
