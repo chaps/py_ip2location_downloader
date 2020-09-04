@@ -4,6 +4,9 @@ import tempfile
 
 
 def no2ip(iplong):
+    # Credits/Taken from, we would have imported this but it is not available
+    #  as a python package: 
+    # https://github.com/ip2location/ip2location-python-csv-converter
     return (socket.inet_ntoa(struct.pack('!I', int(iplong))))
 
 
