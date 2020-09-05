@@ -2,7 +2,6 @@
 
 import zipfile
 import os
-
 import tempfile
 
 
@@ -41,4 +40,3 @@ class Unzipper:
         print("DB unzipped and located at {}".format(output_path))    
         
         return output_path
-        
