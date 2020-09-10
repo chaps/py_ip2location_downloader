@@ -2,7 +2,6 @@
 
 import zipfile
 import os
-import tempfile
 
 
 class Unzipper:

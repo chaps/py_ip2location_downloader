@@ -4,13 +4,14 @@ import sys
 from .unzipper import Unzipper
 from .downloader import download_free_db_zip, \
     download_auth_db_zip
+from .number_to_ip import csv_number_to_ip
 import tempfile
 import os
 
 class CliUtil:
     def __init__(
         self, download_path=None, download_type="free", ipversion="ipv4", _format="CSV", 
-        unzip=True,
+        unzip=True, numbertoipv4=True,
         *args, **kwargs
     ):
         if download_path:
@@ -22,7 +23,7 @@ class CliUtil:
         self.ipversion = ipversion
         self.format = _format
         self.unzip = unzip
-        
+        self.numbertoipv4 = numbertoipv4
 
 
     def exec(self, token=None):
@@ -33,8 +34,8 @@ class CliUtil:
             download_auth_db_zip(TOKEN=token)
         if self.unzip:
             output_path = Unzipper(self.download_path).unzip()
-
-    pass
+            if self.numbertoipv4:
+                csv_number_to_ip(output_path)
 
 
 def main():
@@ -47,6 +48,7 @@ def main():
     parser.add_argument("--product", default="db1", help="PRODUCT")
     parser.add_argument("--token", help="token used in order to authenticate in case of downloading the auth required DBs ")
     parser.add_argument("--unzip", default=True, help="")
+    parser.add_argument("--numbertoipv4", default=True, help="")
 
     args = parser.parse_args()
     
