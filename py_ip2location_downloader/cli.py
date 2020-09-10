@@ -24,7 +24,6 @@ class CliUtil:
         self.format = _format
         self.unzip = unzip
         self.numbertoipv4 = numbertoipv4
-        
 
 
     def exec(self, token=None):
@@ -37,7 +36,6 @@ class CliUtil:
             output_path = Unzipper(self.download_path).unzip()
             if self.numbertoipv4:
                 csv_number_to_ip(output_path)
-    pass
 
 
 def main():
