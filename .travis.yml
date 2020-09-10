@@ -8,6 +8,8 @@ python:
   - "nightly"  # nightly build
 # command to install dependencies
 install:
+  - pip install flake8
   - pip install ./
 script:
+  - flake8 py_ip2location_downloader/
   - py_ip2location_downloader -h
