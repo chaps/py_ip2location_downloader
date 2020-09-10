@@ -47,7 +47,6 @@ def build_product_code_format(PRODUCT, IP_VERSION, FORMAT):
 
     format_value = "" if FORMAT == FormatEnum.CSV else FORMAT.value
     ip_version = "" if IP_VERSION == IPVersionEnum.IPV4 else IP_VERSION.value
-
     return "{product}LITE{format}{ip_version}".format(
         product=PRODUCT.value,
         format=format_value,

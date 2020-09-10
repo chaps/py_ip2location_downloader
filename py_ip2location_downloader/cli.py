@@ -23,7 +23,6 @@ class CliUtil:
             self.download_path = os.path.join(
                 tempfile.gettempdir(), "ip2location_db.zip"
             )
-
         self.download_type = download_type
         self.ipversion = ipversion
         self.format = _format
@@ -41,8 +40,6 @@ class CliUtil:
             output_path = Unzipper(self.download_path).unzip()
             if self.numbertoipv4:
                 csv_number_to_ip(output_path)
-    pass
-
 
 def main():
     """Console script for py_ip2location_downloader."""
