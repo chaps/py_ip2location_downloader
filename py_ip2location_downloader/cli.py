@@ -41,6 +41,7 @@ class CliUtil:
             if self.numbertoipv4:
                 csv_number_to_ip(output_path)
 
+
 def main():
     """Console script for py_ip2location_downloader."""
     parser = argparse.ArgumentParser()

@@ -20,7 +20,6 @@ class Unzipper:
                 return name
         raise Exception("No database file found.")
 
-
     def unzip(self, target_path=None, only_db=True, delete_zip=True):
         """
         """
@@ -38,6 +37,6 @@ class Unzipper:
         else:
             output_path = os.path.join(os.getcwd(), file_name_ref)
         # LOG
-        print("DB unzipped and located at {}".format(output_path))    
-        
+        print("DB unzipped and located at {}".format(output_path))
+
         return output_path
