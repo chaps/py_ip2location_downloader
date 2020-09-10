@@ -23,6 +23,7 @@ def test_free_download():
     # csv_number_to_ip("IP2LOCATION-LITE-DB1.CSV", "new.csv")
     csv_number_to_ip("IP2LOCATION-LITE-DB1.CSV")
 
+
 def test_number2ip():
     
     # download_free_db_zip("ipv4csv.zip", IP_VERSION=IPVersionEnum.IPV4, FORMAT=FormatEnum.CSV)
@@ -39,6 +40,27 @@ def test_account_download():
         IPVersionEnum.IPV4,
         FormatEnum.CSV
     )
+    Unzipper("testauth.zip").unzip()
+
+
+def test_number2ip():
+    
+    # download_free_db_zip("ipv4csv.zip", IP_VERSION=IPVersionEnum.IPV4, FORMAT=FormatEnum.CSV)
+    # csv_path = Unzipper("ipv4csv.zip").unzip()
+    csv_number_to_ip("IP2LOCATION-LITE-DB1.CSV", "new.csv")
+
+def test_account_download():
+    token = os.environ.get("IP2LOCATION_AUTH_TOKEN")
+    
+    download_auth_db_zip(
+        "testauth.zip", 
+        token,
+        ProductCodeEnum.DB1,
+        IPVersionEnum.IPV4,
+        FormatEnum.CSV
+    )
+    csv_path = Unzipper("testauth.zip").unzip()
+    
     Unzipper("testauth.zip").unzip()
 
 
